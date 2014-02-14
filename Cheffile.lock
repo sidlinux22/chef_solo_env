@@ -100,8 +100,15 @@ GIT
   specs:
     monit (1.5.2)
 
+PATH
+  remote: /root/cookbooks/chef_solo_env
+  specs:
+    chef_solo_env (0.0.0)
+      nginx (>= 0.0.0)
+
 DEPENDENCIES
   cassandra (>= 0)
+  chef_solo_env (>= 0)
   monit (>= 0)
   nagios (>= 0)
   nginx (>= 0)

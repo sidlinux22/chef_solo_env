@@ -12,6 +12,7 @@ cookbook 'monit', :git => 'https://github.com/phlipper/chef-monit.git'
 cookbook 'cassandra', :git =>  'https://github.com/michaelklishin/cassandra-chef-cookbook'
 cookbook 'ruby_build', :github => 'fnichol/chef-rvm'
 cookbook 'postfix'
+cookbook 'chef_solo_env', :path => '/root/cookbooks/chef_solo_env'
 
 
 

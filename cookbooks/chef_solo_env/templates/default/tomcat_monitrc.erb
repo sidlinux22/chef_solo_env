@@ -1,0 +1,9 @@
+check process tomcat7 with pidfile /var/run/tomcat7.pid
+  start program = "/etc/init.d/tomcat7 start"
+  stop program  = "/etc/init.d/tomcat7 stop"
+  if failed host localhost port 8080
+    protocol HTTP request "/"
+    with timeout 20 seconds for 2 cycles
+  then restart
+  if 5 restarts within 5 cycles then timeout
+
