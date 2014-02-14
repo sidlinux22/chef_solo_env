@@ -1,8 +1,27 @@
- #!/usr/bin/env ruby
-  #^syntax detection
+#!/usr/bin/env ruby
+#^syntax detection
 
-  site 'http://community.opscode.com/api/v1'
+site 'http://community.opscode.com/api/v1'
 
-  cookbook 'runit'
-  cookbook 'nginx', :git => 'git://github.com/opscode-cookbooks/nginx.git'
+# cookbook 'chef-client'
 
+# cookbook 'apache2', '>= 1.0.0'
+
+# cookbook 'rvm',
+#   :git => 'https://github.com/fnichol/chef-rvm'
+
+# cookbook 'postgresql',
+#   :git => 'https://github.com/findsyou/cookbooks',
+#   :ref => 'postgresql-improvements'
+#
+cookbook 'openssl'
+cookbook 'nginx'
+cookbook 'postfix'
+cookbook 'nagios'
+cookbook 'tomcat',
+     :git => 'https://github.com/opscode-cookbooks/tomcat'
+cookbook 'ruby_build',
+     :git => 'https://github.com/fnichol/chef-rvm'
+
+cookbook 'cassandra', 
+      :git =>  'https://github.com/michaelklishin/cassandra-chef-cookbook'

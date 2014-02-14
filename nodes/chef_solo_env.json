@@ -1,10 +1,40 @@
 {
-  
-"nginx": {
+  "nginx": {
     "version": "1.4.3",
     "default_site_enabled": false
   },
-"run_list": [
-    "recipe[nginx::source]"
+
+  "java": {
+     "install_flavor": "oracle",
+     "jdk_version": "7",
+     "oracle": {
+       "accept_oracle_download_terms": true
+     }
+   },
+
+"cassandra": {
+     "version": "1.2.11",
+     "tarball": {
+	     "url": "http://www.eu.apache.org/dist/cassandra/1.2.11/apache-cassandra-1.2.11-bin.tar.gz",
+	     "md5": "c6f80161bcc90b9f5e909e9de388957a"
+    }
+  },
+
+
+  "postfix": {
+    "main": { 
+      "smtpd_use_tls": "no",
+      "smtp_use_tls": "no"
+    }
+  },
+
+  "run_list": [
+    "recipe[java::oracle]",
+    "recipe[nginx::package]",
+    "recipe[apt::default]",
+    "recipe[postfix]",
+    "recipe[nagios]",
+    "recipe[tomcat]",
+     "recipe[cassandra::tarball]"
   ]
 }
