@@ -13,13 +13,12 @@
    },
 
 "cassandra": {
-     "version": "1.2.11",
+     "version": "1.2.15",
      "tarball": {
-	     "url": "http://www.eu.apache.org/dist/cassandra/1.2.11/apache-cassandra-1.2.11-bin.tar.gz",
+	     "url": "http://www.eu.apache.org/dist/cassandra/1.2.15/apache-cassandra-1.2.15-bin.tar.gz",
 	     "md5": "c6f80161bcc90b9f5e909e9de388957a"
     }
   },
-
 
   "postfix": {
     "main": { 
@@ -27,6 +26,7 @@
       "smtp_use_tls": "no"
     }
   },
+
 
   "run_list": [
     "recipe[java::oracle]",

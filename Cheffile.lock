@@ -3,27 +3,15 @@ SITE
   specs:
     apache2 (1.8.14)
     apt (2.3.6)
+    ark (0.4.2)
     bluepill (2.3.1)
       rsyslog (>= 0.0.0)
-    boost (0.2.0)
     build-essential (1.4.2)
-    cassandra (0.2.4)
-      apt (>= 0.0.0)
-      install_from (>= 0.0.0)
-      iptables (>= 0.0.0)
-      java (>= 0.0.0)
-      metachef (>= 0.0.0)
-      runit (>= 0.0.0)
-      thrift (>= 0.0.0)
-      volumes (>= 0.0.0)
     chef_gem (0.1.0)
     chef_handler (1.1.4)
     iis (2.0.0)
       windows (>= 1.2.6)
-    install_from (3.0.4)
-    iptables (0.12.0)
     java (1.19.2)
-    metachef (3.0.4)
     mysql (4.0.20)
       build-essential (~> 1.4)
       openssl (~> 1.1)
@@ -33,14 +21,6 @@ SITE
       nginx (>= 0.0.0)
       nginx_simplecgi (>= 0.0.0)
       php (>= 0.0.0)
-      yum-epel (>= 0.0.0)
-    nginx (2.2.2)
-      apt (~> 2.2)
-      bluepill (~> 2.3)
-      build-essential (~> 1.4)
-      ohai (~> 1.1)
-      runit (~> 1.2)
-      yum (~> 3.0)
       yum-epel (>= 0.0.0)
     nginx_simplecgi (0.1.0)
       bluepill (>= 0.0.0)
@@ -58,29 +38,32 @@ SITE
       xml (>= 0.0.0)
       yum-epel (>= 0.0.0)
     postfix (3.0.4)
-    python (1.4.6)
-      build-essential (>= 0.0.0)
-      yum-epel (>= 0.0.0)
     rsyslog (1.10.2)
     runit (1.5.8)
       build-essential (>= 0.0.0)
       yum (~> 3.0)
       yum-epel (>= 0.0.0)
-    thrift (1.2.0)
-      boost (>= 0.0.0)
-      build-essential (>= 0.0.0)
-      python (>= 0.0.0)
-    volumes (3.0.4)
-      metachef (>= 0.0.0)
-      xfs (>= 0.0.0)
     windows (1.12.8)
       chef_handler (>= 0.0.0)
-    xfs (1.1.0)
     xml (1.2.0)
       build-essential (>= 0.0.0)
     yum (3.1.0)
     yum-epel (0.3.2)
       yum (~> 3.0)
+
+GIT
+  remote: git://github.com/opscode-cookbooks/nginx.git
+  ref: master
+  sha: 3ab179749e0ffee016a23e91b6cc72ca1c85657d
+  specs:
+    nginx (2.2.3)
+      apt (~> 2.2)
+      bluepill (~> 2.3)
+      build-essential (~> 1.4)
+      ohai (~> 1.1)
+      runit (~> 1.2)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
 
 GIT
   remote: https://github.com/fnichol/chef-rvm
@@ -91,6 +74,17 @@ GIT
       chef_gem (>= 0.0.0)
 
 GIT
+  remote: https://github.com/michaelklishin/cassandra-chef-cookbook
+  ref: master
+  sha: c885fd7d4a2bb3f4d41a11d52d9854d262810faf
+  specs:
+    cassandra (2.1.0)
+      apt (>= 0.0.0)
+      ark (>= 0.0.0)
+      java (>= 0.0.0)
+      yum (~> 3.0)
+
+GIT
   remote: https://github.com/opscode-cookbooks/tomcat
   ref: master
   sha: 567e22050f2c56c0cf10b1f335f409e4cd67cf97
@@ -99,8 +93,16 @@ GIT
       java (>= 0.0.0)
       openssl (>= 0.0.0)
 
+GIT
+  remote: https://github.com/phlipper/chef-monit.git
+  ref: master
+  sha: 23756d508f8c10b8687213e0f9a3f4ae47f836ac
+  specs:
+    monit (1.5.2)
+
 DEPENDENCIES
   cassandra (>= 0)
+  monit (>= 0)
   nagios (>= 0)
   nginx (>= 0)
   openssl (>= 0)
